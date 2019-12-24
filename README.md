@@ -13,22 +13,6 @@ in command prompt, run ``new-project.bat`` with the folder directory you want se
 ### Linux and Mac
 in the terminal, run ``new-project.sh`` with the folder directory you want set up. For example ``sh ./new-project.sh ../new-project`` will create a node project in a sibling folder to the current directory called new-project. If you have permission issues, run ``chmod +x ./new-project.sh`` and you should be good to go.
 
-Once the script is run you'll be in the project's new directory. In here you'll find a package.json file has been created. Open this file in your favorite editor (some IDE or notepad++, NVIM, etc.).
-
-
-```diff
-{
-    "main": "app.js"
-    ...
-     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-+       "serve": "node server.js"
-    }
-    ...
-}
-```
-In here, you'll see that webpack.config.js is used to dictate how the final product is fleshed out.
-
 ### A few notes about Webpack
 1.  Webpack makes the assumption that your code is stored under root/src. This is included for readability, but if left out, it would default to assume it.
 2.  The config file is written by the developer of the project, so I included this as a starting point. Feel free to modify it as you see fit for your project.
