@@ -13,6 +13,11 @@ in command prompt, run ``new-project.bat`` with the folder directory you want se
 ### Linux and Mac
 in the terminal, run ``new-project.sh`` with the folder directory you want set up. For example ``sh ./new-project.sh ../new-project`` will create a node project in a sibling folder to the current directory called new-project. If you have permission issues, run ``chmod +x ./new-project.sh`` and you should be good to go.
 
+## How To run the server
+
+One approach is to run node raw via ``node server.js``. If you wish you run through the package configuration, you can call ``npm run start`` and it will run the same command through server.js. test does not have any functionality at this time, but note that in a real world project, you would want unit tests and integration tests. This will be covered in a future project.
+
+
 ### A few notes about Webpack
 1.  Webpack makes the assumption that your code is stored under root/src. This is included for readability, but if left out, it would default to assume it.
 2.  The config file is written by the developer of the project, so I included this as a starting point. Feel free to modify it as you see fit for your project.
