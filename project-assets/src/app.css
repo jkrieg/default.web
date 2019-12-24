@@ -1,0 +1,10 @@
+.theme-dark, .theme-dark * /* astrisk after a class means everything under it including children of children.*/
+{
+    background: #3e3e3e;
+    color: #ffffff;
+}
+.theme-light, .theme-light *
+{
+    background: #e3e3e3;
+    color: #000000;
+}

@@ -8,9 +8,31 @@ Before begining, download the latest version of node and npm from https://nodejs
 We'll run some scripts in terminal/command prompt to complete our project folder setup.
 
 ### Windows
-in command prompt, run ``project-setup.bat`` with the folder directory you want set up. For example ``project-setup.bat ..\new-project`` will create a node project in a sibling folder to the current directory called new-project.
+in command prompt, run ``new-project.bat`` with the folder directory you want set up. For example ``new-project.bat ..\new-project`` will create a node project in a sibling folder to the current directory called new-project.
 
 ### Linux and Mac
-in the terminal, run ``project-setup.sh`` with the folder directory you want set up. For example ``project-setup.sh ../new-project`` will create a node project in a sibling folder to the current directory called new-project.
+in the terminal, run ``new-project.sh`` with the folder directory you want set up. For example ``sh ./new-project.sh ../new-project`` will create a node project in a sibling folder to the current directory called new-project. If you have permission issues, run ``chmod +x ./new-project.sh`` and you should be good to go.
 
-Once you have your project folder set up, you can use whatever IDE you prefer to start working with JavaScript, HTML and CSS. You can even derive your project to work with ReactJS, or Vue. If you want an Angular project set up, you can see my GIT repo called default.angular which instructs you on how to install the Angular CLI and create a new project. This is still a good project to start with if you plan on using Angular CLI, as you'll be importing libraries from NPM to enhance functionality that Angular doesn't provide, such as momentjs, a date-time library that simplifies the transformation and math behind dates in JavaScript. If you want to learn how to use NPM from this project, you can check the script you ran to begin your Node project to see what's involved in creating the serverlet, and how it launches static files.
+Once the script is run you'll be in the project's new directory. In here you'll find a package.json file has been created. Open this file in your favorite editor (some IDE or notepad++, NVIM, etc.).
+
+
+```diff
+{
+    "main": "app.js"
+    ...
+     "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
++       "serve": "node server.js"
+    }
+    ...
+}
+```
+In here, you'll see that webpack.config.js is used to dictate how the final product is fleshed out.
+
+### A few notes about Webpack
+1.  Webpack makes the assumption that your code is stored under root/src. This is included for readability, but if left out, it would default to assume it.
+2.  The config file is written by the developer of the project, so I included this as a starting point. Feel free to modify it as you see fit for your project.
+3.  ``webpack.config.js`` is read by default from the current directory where webpack is run, and by extension in the ``package.json`` file above, where ``npm run build`` is run.
+4.  Out of the box, webpack is not a requirement, but it helps organize your project and pulls your resources together into a distribution package if you configure it appropriately. If you're going to include more folders outside of the src folder, you'll want to include them in webpack.config.js
+
+For more information on webpack for Node, see https://webpack.js.org/api/node/
